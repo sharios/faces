@@ -1,0 +1,14 @@
+      <svg xmlns="http://www.w3.org/2000/svg" width="880" height="640"
+           viewBox="0 0 880 640" fill="none" stroke="#141414"
+           stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M110 500
+         C70 300 120 150 210 130
+         A70 70 0 0 1 330 92
+         A70 70 0 0 1 440 74
+         A70 70 0 0 1 550 92
+         A70 70 0 0 1 670 130
+         C760 150 810 300 770 500"/>
+<path d="M235 250 a34 34 0 1 0 2 0 M405 190 a34 34 0 1 0 2 0
+         M575 250 a34 34 0 1 0 2 0 M320 360 a30 30 0 1 0 2 0
+         M500 370 a30 30 0 1 0 2 0"/>
+      </svg>

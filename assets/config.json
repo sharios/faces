@@ -1,0 +1,75 @@
+{
+  "stage": { "width": 1000, "height": 1000 },
+  "layerOrder": ["head", "hair", "eyes", "nose", "mouth"],
+  "features": {
+    "head": {
+      "label": "Head",
+      "selectable": false,
+      "box": { "x": 14.0, "y": 7.0, "w": 72.0, "h": 88.0 },
+      "options": [
+        { "id": "head", "label": "Head", "src": "assets/base/head.svg" }
+      ]
+    },
+    "hair": {
+      "label": "Hair",
+      "selectable": true,
+      "allowNone": true,
+      "box": { "x": 6.0, "y": 0.0, "w": 88.0, "h": 62.0 },
+      "options": [
+        { "id": "hair-01-short", "label": "Short", "src": "assets/hair/hair-01-short.svg" },
+        { "id": "hair-02-curly", "label": "Curly", "src": "assets/hair/hair-02-curly.svg" },
+        { "id": "hair-03-long", "label": "Long", "src": "assets/hair/hair-03-long.svg" },
+        { "id": "hair-04-swoop", "label": "Swoop", "src": "assets/hair/hair-04-swoop.svg" },
+        { "id": "hair-05-bald", "label": "Balding", "src": "assets/hair/hair-05-bald.svg" },
+        { "id": "hair-06-bun", "label": "Bun", "src": "assets/hair/hair-06-bun.svg" },
+        { "id": "hair-07-bob", "label": "Bob", "src": "assets/hair/hair-07-bob.svg" },
+        { "id": "hair-08-mohawk", "label": "Mohawk", "src": "assets/hair/hair-08-mohawk.svg" }
+      ]
+    },
+    "eyes": {
+      "label": "Eyes",
+      "selectable": true,
+      "box": { "x": 22.5, "y": 35.0, "w": 55.0, "h": 25.0 },
+      "options": [
+        { "id": "eyes-01", "label": "Eyes 1", "src": "assets/eyes/eyes-01.png" },
+        { "id": "eyes-02", "label": "Eyes 2", "src": "assets/eyes/eyes-02.png" },
+        { "id": "eyes-03", "label": "Eyes 3", "src": "assets/eyes/eyes-03.png" },
+        { "id": "eyes-04", "label": "Eyes 4", "src": "assets/eyes/eyes-04.png" },
+        { "id": "eyes-05", "label": "Eyes 5", "src": "assets/eyes/eyes-05.png" },
+        { "id": "eyes-06", "label": "Eyes 6", "src": "assets/eyes/eyes-06.png" },
+        { "id": "eyes-07", "label": "Eyes 7", "src": "assets/eyes/eyes-07.png" },
+        { "id": "eyes-08", "label": "Eyes 8", "src": "assets/eyes/eyes-08.png" },
+        { "id": "eyes-09", "label": "Eyes 9", "src": "assets/eyes/eyes-09.png" },
+        { "id": "eyes-10", "label": "Eyes 10", "src": "assets/eyes/eyes-10.png" }
+      ]
+    },
+    "nose": {
+      "label": "Nose",
+      "selectable": true,
+      "box": { "x": 41.5, "y": 44.0, "w": 17.0, "h": 24.0 },
+      "options": [
+        { "id": "nose-01-hook", "label": "Hook", "src": "assets/nose/nose-01-hook.svg" },
+        { "id": "nose-02-button", "label": "Button", "src": "assets/nose/nose-02-button.svg" },
+        { "id": "nose-03-triangle", "label": "Triangle", "src": "assets/nose/nose-03-triangle.svg" },
+        { "id": "nose-04-line", "label": "Line", "src": "assets/nose/nose-04-line.svg" },
+        { "id": "nose-05-wide", "label": "Wide", "src": "assets/nose/nose-05-wide.svg" },
+        { "id": "nose-06-upturned", "label": "Upturned", "src": "assets/nose/nose-06-upturned.svg" }
+      ]
+    },
+    "mouth": {
+      "label": "Mouth",
+      "selectable": true,
+      "box": { "x": 32.0, "y": 66.0, "w": 36.0, "h": 20.0 },
+      "options": [
+        { "id": "mouth-01-smile", "label": "Smile", "src": "assets/mouth/mouth-01-smile.svg" },
+        { "id": "mouth-02-neutral", "label": "Neutral", "src": "assets/mouth/mouth-02-neutral.svg" },
+        { "id": "mouth-03-frown", "label": "Frown", "src": "assets/mouth/mouth-03-frown.svg" },
+        { "id": "mouth-04-open", "label": "Open", "src": "assets/mouth/mouth-04-open.svg" },
+        { "id": "mouth-05-o", "label": "Oh", "src": "assets/mouth/mouth-05-o.svg" },
+        { "id": "mouth-06-grin", "label": "Grin", "src": "assets/mouth/mouth-06-grin.svg" },
+        { "id": "mouth-07-tongue", "label": "Tongue", "src": "assets/mouth/mouth-07-tongue.svg" },
+        { "id": "mouth-08-smirk", "label": "Smirk", "src": "assets/mouth/mouth-08-smirk.svg" }
+      ]
+    }
+  }
+}
