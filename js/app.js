@@ -209,6 +209,10 @@
     const ctx = canvas.getContext('2d');
     ctx.scale(scale, scale);
 
+    // Match the on-screen preview: solid white face background.
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(0, 0, S, S);
+
     for (const layer of resolvedLayers()) {
       let img;
       try {

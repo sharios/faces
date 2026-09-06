@@ -3,11 +3,16 @@
   "layerOrder": ["head", "hair", "eyes", "nose", "mouth"],
   "features": {
     "head": {
-      "label": "Head",
-      "selectable": false,
+      "label": "Shape",
+      "selectable": true,
       "box": { "x": 14.0, "y": 7.0, "w": 72.0, "h": 88.0 },
       "options": [
-        { "id": "head", "label": "Head", "src": "assets/base/head.svg" }
+        { "id": "head-01-oval", "label": "Oval", "src": "assets/head/head-01-oval.svg" },
+        { "id": "head-02-round", "label": "Round", "src": "assets/head/head-02-round.svg" },
+        { "id": "head-03-square", "label": "Square", "src": "assets/head/head-03-square.svg" },
+        { "id": "head-04-heart", "label": "Heart", "src": "assets/head/head-04-heart.svg" },
+        { "id": "head-05-long", "label": "Long", "src": "assets/head/head-05-long.svg" },
+        { "id": "head-06-diamond", "label": "Diamond", "src": "assets/head/head-06-diamond.svg" }
       ]
     },
     "hair": {

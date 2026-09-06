@@ -32,19 +32,55 @@ def write(rel, content):
     print("wrote", rel)
 
 
-# ---------------------------------------------------------------- base head ---
-HEAD = svg(720, 860, '''\
-  <!-- face outline -->
-  <path d="M360 24
-           C182 24 74 214 74 432
-           C74 656 210 836 360 836
-           C510 836 646 656 646 432
-           C646 214 538 24 360 24 Z"/>
-  <!-- ears -->
-  <path d="M78 388 C34 372 28 470 82 476"/>
-  <path d="M642 388 C686 372 692 470 638 476"/>
-''', sw=9)
-write("base/head.svg", HEAD)
+# --------------------------------------------------------------- face shape ---
+# All shapes share a viewBox of 720x860 and keep the face roughly within
+# x 70..650, y 26..834 so the eyes/nose/mouth placement boxes stay aligned.
+EARS = '''\
+  <path d="M{lx} 392 C{lox} 374 {lox} 474 {lx2} 480"/>
+  <path d="M{rx} 392 C{rox} 374 {rox} 474 {rx2} 480"/>'''
+
+
+def ears(inset):
+    return EARS.format(
+        lx=70 + inset, lox=26 + inset, lx2=74 + inset,
+        rx=650 - inset, rox=694 - inset, rx2=646 - inset,
+    )
+
+
+heads = {
+    "head-01-oval": svg(720, 860, f'''\
+  <path d="M360 26 C180 26 76 214 76 430 C76 650 214 834 360 834
+           C506 834 644 650 644 430 C644 214 540 26 360 26 Z"/>
+{ears(0)}''', sw=9),
+
+    "head-02-round": svg(720, 860, f'''\
+  <ellipse cx="360" cy="438" rx="300" ry="396"/>
+{ears(0)}''', sw=9),
+
+    "head-03-square": svg(720, 860, f'''\
+  <path d="M120 190 Q120 30 360 30 Q600 30 600 190 L600 560
+           Q600 720 470 800 Q360 848 250 800 Q120 720 120 560 Z"/>
+{ears(46)}''', sw=9),
+
+    "head-04-heart": svg(720, 860, f'''\
+  <path d="M360 44 C168 44 84 210 100 372 C112 500 190 650 300 760
+           Q360 802 420 760 C530 650 608 500 620 372 C636 210 552 44 360 44 Z"/>
+{ears(6)}''', sw=9),
+
+    "head-05-long": svg(720, 860, f'''\
+  <path d="M360 28 C246 28 150 190 146 430 C142 650 232 832 360 832
+           C488 832 578 650 574 430 C570 190 474 28 360 28 Z"/>
+{ears(70)}''', sw=9),
+
+    "head-06-diamond": svg(720, 860, f'''\
+  <path d="M360 58 C298 62 248 112 208 210 C168 300 140 378 116 440
+           C140 502 174 590 220 680 C270 782 322 822 360 828
+           C398 822 450 782 500 680 C546 590 580 502 604 440
+           C580 378 552 300 512 210 C472 112 422 62 360 58 Z"/>
+{ears(58)}''', sw=9),
+}
+for name, content in heads.items():
+    write(f"head/{name}.svg", content)
 
 
 # --------------------------------------------------------------------- hair ---

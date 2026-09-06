@@ -1,5 +1,5 @@
 /* Face Builder service worker — offline-first cache. */
-const CACHE = 'facebuilder-v1';
+const CACHE = 'facebuilder-v2';
 
 const SHELL = [
   '.',
