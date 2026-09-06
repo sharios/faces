@@ -1,8 +1,9 @@
 # Face Builder
 
 A small installable **PWA** for building a cartoon face by picking alternatives
-for the **face shape** plus four features: **hair, eyes, nose, mouth**. Mix them,
-hit **Random**, and **Download** the result as a PNG on a white background.
+for the **face shape**, **hair** (with a **hair colour**), **eyes**, **nose** and
+**mouth**. Mix them, hit **Random**, and **Download** the result as a PNG on a
+white background.
 
 - No build step, no framework — plain HTML/CSS/JS.
 - Works offline once loaded (service worker caches the app shell + all art).
@@ -32,7 +33,8 @@ All paths in the app are relative, so it also works from a subfolder or from
 |---|---|---|---|
 | Face shape | `assets/head/*.svg` | SVG, black strokes on transparent | Sample art; drawn behind everything |
 | Eyes | `assets/eyes/eyes-*.png` | PNG, transparent | Provided; normalised to a common aspect ratio |
-| Hair | `assets/hair/*.svg` | SVG, black strokes on transparent | Sample art |
+| Hair | `assets/hair/*.svg` | SVG, black strokes on transparent | Sample art; recoloured at runtime |
+| Hair colour | — | — | `hairColor` feature; tints the hair layer, no art of its own |
 | Nose | `assets/nose/*.svg` | SVG, black strokes on transparent | Sample art |
 | Mouth | `assets/mouth/*.svg` | SVG, black strokes on transparent | Sample art |
 
@@ -44,14 +46,20 @@ Icons come from `scripts/gen_icons.py`.
 
 Everything the app draws is declared in **`assets/config.json`**:
 
-- `features.<name>.options[]` — the list of `{ id, label, src }` choices in the picker.
+- `features.<name>.options[]` — the `{ id, label, src }` choices in the picker.
+  - `scale` (optional, number) — grows/shrinks just that option relative to its
+    box, e.g. `"scale": 1.5`. Used to size individual eye assets consistently.
 - `features.<name>.box` — where that layer is placed on the 1000×1000 face stage,
   as `{ x, y, w, h }` in **percent**. The image is fit into that box with
   `object-fit: contain`.
-- `layerOrder` — back‑to‑front draw order.
+- `features.<name>.tintTarget` — marks a feature as a **colour picker** for
+  another layer instead of a layer itself (options carry `color` instead of
+  `src`). `hairColor` uses this to recolour the hair line art via a CSS mask /
+  canvas `source-in`.
+- `layerOrder` — back‑to‑front draw order (tint features are not listed here).
 
 To add a new mouth, drop `assets/mouth/my-mouth.svg` in place and add an entry to
-`features.mouth.options`. Bump the cache name in `sw.js` (`facebuilder-v1` → `-v2`)
+`features.mouth.options`. Bump the cache name in `sw.js` (`facebuilder-v3` → `-v4`)
 so clients pick up the new asset.
 
 ## Project layout

@@ -1,6 +1,7 @@
 {
   "stage": { "width": 1000, "height": 1000 },
   "layerOrder": ["head", "hair", "eyes", "nose", "mouth"],
+  "_note": "hairColor has no box/layer of its own; it tints the 'hair' layer via tintTarget.",
   "features": {
     "head": {
       "label": "Shape",
@@ -31,16 +32,27 @@
         { "id": "hair-08-mohawk", "label": "Mohawk", "src": "assets/hair/hair-08-mohawk.svg" }
       ]
     },
+    "hairColor": {
+      "label": "Hair color",
+      "selectable": true,
+      "tintTarget": "hair",
+      "options": [
+        { "id": "black", "label": "Black", "color": "#1f1b18" },
+        { "id": "brown", "label": "Brown", "color": "#6b4327" },
+        { "id": "blond", "label": "Blond", "color": "#d9a441" },
+        { "id": "red", "label": "Red", "color": "#a53d22" }
+      ]
+    },
     "eyes": {
       "label": "Eyes",
       "selectable": true,
       "box": { "x": 22.5, "y": 35.0, "w": 55.0, "h": 25.0 },
       "options": [
         { "id": "eyes-01", "label": "Eyes 1", "src": "assets/eyes/eyes-01.png" },
-        { "id": "eyes-02", "label": "Eyes 2", "src": "assets/eyes/eyes-02.png" },
+        { "id": "eyes-02", "label": "Eyes 2", "src": "assets/eyes/eyes-02.png", "scale": 1.5 },
         { "id": "eyes-03", "label": "Eyes 3", "src": "assets/eyes/eyes-03.png" },
         { "id": "eyes-04", "label": "Eyes 4", "src": "assets/eyes/eyes-04.png" },
-        { "id": "eyes-05", "label": "Eyes 5", "src": "assets/eyes/eyes-05.png" },
+        { "id": "eyes-05", "label": "Eyes 5", "src": "assets/eyes/eyes-05.png", "scale": 2.0 },
         { "id": "eyes-06", "label": "Eyes 6", "src": "assets/eyes/eyes-06.png" },
         { "id": "eyes-07", "label": "Eyes 7", "src": "assets/eyes/eyes-07.png" },
         { "id": "eyes-08", "label": "Eyes 8", "src": "assets/eyes/eyes-08.png" },
@@ -51,7 +63,7 @@
     "nose": {
       "label": "Nose",
       "selectable": true,
-      "box": { "x": 41.5, "y": 44.0, "w": 17.0, "h": 24.0 },
+      "box": { "x": 35.0, "y": 42.0, "w": 30.0, "h": 40.0 },
       "options": [
         { "id": "nose-01-hook", "label": "Hook", "src": "assets/nose/nose-01-hook.svg" },
         { "id": "nose-02-button", "label": "Button", "src": "assets/nose/nose-02-button.svg" },
@@ -64,7 +76,7 @@
     "mouth": {
       "label": "Mouth",
       "selectable": true,
-      "box": { "x": 32.0, "y": 66.0, "w": 36.0, "h": 20.0 },
+      "box": { "x": 32.0, "y": 68.0, "w": 36.0, "h": 20.0 },
       "options": [
         { "id": "mouth-01-smile", "label": "Smile", "src": "assets/mouth/mouth-01-smile.svg" },
         { "id": "mouth-02-neutral", "label": "Neutral", "src": "assets/mouth/mouth-02-neutral.svg" },

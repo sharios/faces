@@ -14,10 +14,14 @@ ASSETS = os.path.join(ROOT, "assets")
 STROKE = '#141414'
 
 
-def svg(view_w, view_h, body, sw=8):
+def svg(view_w, view_h, body, sw=8, viewbox=None):
+    """viewbox: optional "minx miny w h" string to crop tighter than the canvas.
+    width/height are set from the viewBox so the asset carries its true aspect."""
+    vb = viewbox or f"0 0 {view_w} {view_h}"
+    _, _, vw, vh = vb.split()
     return textwrap.dedent(f'''\
-        <svg xmlns="http://www.w3.org/2000/svg" width="{view_w}" height="{view_h}"
-             viewBox="0 0 {view_w} {view_h}" fill="none" stroke="{STROKE}"
+        <svg xmlns="http://www.w3.org/2000/svg" width="{vw}" height="{vh}"
+             viewBox="{vb}" fill="none" stroke="{STROKE}"
              stroke-width="{sw}" stroke-linecap="round" stroke-linejoin="round">
         {body}
         </svg>
